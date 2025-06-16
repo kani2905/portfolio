@@ -56,13 +56,13 @@ const Contact = () => {
     {
       icon: <Github size={20} />,
       name: 'GitHub',
-      url: '#',
+      url: 'https://github.com/kani2905',
       color: '#333'
     },
     {
       icon: <Linkedin size={20} />,
       name: 'LinkedIn',
-      url: '#',
+      url: 'https://www.linkedin.com/in/kanishka-it/',
       color: '#0077b5'
     },
     {
@@ -118,19 +118,21 @@ const Contact = () => {
 
             <div className="social-section">
               <h4 className="social-title">Follow Me</h4>
-              <div className="social-links">
-                {socialLinks.map((social, index) => (
-                  <a 
-                    key={index}
-                    href={social.url}
-                    className="social-link"
-                    style={{ '--social-color': social.color }}
-                  >
-                    {social.icon}
-                    <span>{social.name}</span>
-                  </a>
-                ))}
-              </div>
+             <div className="social-section">
+  <h4 className="social-title">Follow Me</h4>
+  <div className="social-links">
+    <a href="mailto:kanishka.it27@gmail.com" className="social-link" target="_blank">
+      <Mail size={20} />
+    </a>
+    <a href="https://www.linkedin.com/in/kanishka-it/" className="social-link" target="_blank">
+      <Linkedin size={20} />
+    </a>
+    <a href="https://github.com/kani2905" className="social-link" target="_blank">
+      <Github size={20} />
+    </a>
+  </div>
+</div>
+
             </div>
           </div>
 
