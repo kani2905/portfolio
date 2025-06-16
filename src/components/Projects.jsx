@@ -8,7 +8,8 @@ const Projects = () => {
       tech: ['Flutter', 'Dart', 'SQLite'],
       icon: <Smartphone size={24} />,
       category: 'Mobile App',
-      features: ['Real-time calculation', 'Data persistence', 'Clean UI/UX']
+      features: ['Real-time calculation', 'Data persistence', 'Clean UI/UX'],
+      github: 'https://github.com/kani2905/GPA-Calculator.git'
     },
     {
       title: 'Online Voting System',
@@ -16,7 +17,8 @@ const Projects = () => {
       tech: ['HTML', 'CSS', 'JavaScript', 'PHP'],
       icon: <Globe size={24} />,
       category: 'Web Application',
-      features: ['User authentication', 'Real-time results', 'Admin panel']
+      features: ['User authentication', 'Real-time results', 'Admin panel'],
+       github: 'https://github.com/kani2905/E-Voting-system.git'
     },
     {
       title: 'Student Report Generator',
@@ -24,7 +26,8 @@ const Projects = () => {
       tech: ['Java', 'Swing', 'MySQL'],
       icon: <Code size={24} />,
       category: 'Desktop Application',
-      features: ['Data visualization', 'PDF export', 'Database integration']
+      features: ['Data visualization', 'PDF export', 'Database integration'],
+      github: 'https://github.com/kani2905/student-report-generator.git'
     },
     {
       title: 'Music Streaming Website',
@@ -32,7 +35,8 @@ const Projects = () => {
       tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
       icon: <Globe size={24} />,
       category: 'Frontend',
-      features: ['Responsive design', 'Audio controls', 'Playlist management']
+      features: ['Responsive design', 'Audio controls', 'Playlist management'],
+      github: 'https://github.com/kani2905/Music-streaming-website-frontend.git',
     },
     {
       title: 'Gemini AI Chatbot',
@@ -40,7 +44,8 @@ const Projects = () => {
       tech: ['JavaScript', 'API Integration', 'HTML/CSS'],
       icon: <Bot size={24} />,
       category: 'AI Integration',
-      features: ['Natural language processing', 'Real-time responses', 'Context awareness']
+      features: ['Natural language processing', 'Real-time responses', 'Context awareness'],
+       github: 'https://github.com/kani2905/AI-Chat-Bot.git',
     }
   ]
 
@@ -81,15 +86,26 @@ const Projects = () => {
               </div>
               
               <div className="project-links">
-                <button className="project-link">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                >
                   <Github size={16} />
                   Code
-                </button>
-                <button className="project-link">
+                </a>
+                <a
+                  href={project.demo || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                >
                   <ExternalLink size={16} />
                   Demo
-                </button>
+                </a>
               </div>
+
             </div>
           ))}
         </div>
@@ -211,9 +227,11 @@ const Projects = () => {
         .project-links {
           display: flex;
           gap: 1rem;
+          text-decoration: none;
         }
 
         .project-link {
+          text-decoration: none;
           display: flex;
           align-items: center;
           gap: 0.5rem;
