@@ -35,7 +35,7 @@ const Header = ({ activeSection }) => {
       <div className="container">
         <div className="header-content">
           <div className="logo">
-            <span className="logo-text">Kanihska</span>
+            <span className="logo-text">Kanishka</span>
           </div>
           
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
