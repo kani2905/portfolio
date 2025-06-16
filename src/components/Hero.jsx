@@ -93,7 +93,7 @@ const Hero = () => {
             <div className="image-container">
               <img 
                 src="/image.jpg" 
-                alt="Kanihska" 
+                alt="Kanishka" 
                 className="profile-image animate-float"
               />
               <div className="image-glow"></div>
