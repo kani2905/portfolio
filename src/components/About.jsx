@@ -56,7 +56,7 @@ const About = () => {
               <div className="education-card">
                 <div className="education-header">
                   <h4>B.Tech in Information Technology</h4>
-                  <span className="duration">2022 - 2026</span>
+                  <span className="duration">2023 - 2027</span>
                 </div>
                 <p className="institution">Sona College of Technology</p>
                 <p className="gpa">GPA: 8.65/10</p>
