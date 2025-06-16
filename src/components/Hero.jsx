@@ -77,13 +77,13 @@ const Hero = () => {
               </button>
             </div>
             <div className="social-links">
-              <a href="mailto:kanishka.it27@gmail.com" className="social-link">
+              <a href="mailto:kanishka.23it@sonatech.ac.in" className="social-link">
                 <Mail size={20} />
               </a>
-              <a href="#" className="social-link">
+              <a href="https://www.linkedin.com/in/kanishka-it/" className="social-link">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="social-link">
+              <a href="https://github.com/kani2905" className="social-link">
                 <Github size={20} />
               </a>
             </div>
@@ -221,29 +221,33 @@ const Hero = () => {
         }
 
         .social-links {
-          display: flex;
-          gap: 1rem;
-        }
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 1rem;
+  
+   margin-bottom: 2.5rem;
+}
 
-        .social-link {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 45px;
-          height: 45px;
-          background: var(--bg-secondary);
-          border: 1px solid var(--border-color);
-          border-radius: 8px;
-          color: var(--text-secondary);
-          text-decoration: none;
-          transition: all 0.3s ease;
-        }
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
 
-        .social-link:hover {
-          background: var(--accent-primary);
-          color: var(--bg-primary);
-          transform: translateY(-2px);
-        }
+.social-link:hover {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  transform: translateY(-2px);
+}
+
 
         .hero-image {
           display: flex;
