@@ -92,7 +92,7 @@ const Hero = () => {
           <div className="hero-image animate-fadeInRight">
             <div className="image-container">
               <img 
-                src="/src/assets/image.jpg" 
+                src="/image.jpg" 
                 alt="Kanihska" 
                 className="profile-image animate-float"
               />
