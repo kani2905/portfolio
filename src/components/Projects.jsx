@@ -111,12 +111,16 @@ const Projects = () => {
         </div>
         
         <div className="projects-cta">
-          <p className="cta-text">Want to see more of my work?</p>
-          <button className="btn btn-primary">
-            <Github size={16} />
-            View All Projects
-          </button>
-        </div>
+  <p className="cta-text">Want to see more of my work?</p>
+  <button
+    className="btn btn-primary"
+    onClick={() => window.open('https://github.com/kani2905', '_blank')}
+  >
+    <Github size={16} />
+    View All Projects
+  </button>
+</div>
+
       </div>
 
       <style jsx>{`

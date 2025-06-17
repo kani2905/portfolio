@@ -9,7 +9,7 @@ const Header = ({ activeSection }) => {
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
-    //{ id: 'experience', label: 'Experience' },
+    { id: 'experience', label: 'Internship' },
     { id: 'contact', label: 'Contact' }
   ]
 
@@ -90,6 +90,7 @@ const Header = ({ activeSection }) => {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
+          
         }
 
         .nav {

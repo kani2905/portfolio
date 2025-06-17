@@ -39,7 +39,7 @@ const Experience = () => {
       description: 'Completed multiple professional certifications in programming and development'
     },
     {
-      year: '2022',
+      year: '2023',
       title: 'Started B.Tech',
       company: 'Sona College of Technology',
       description: 'Began Information Technology undergraduate program'
@@ -49,7 +49,7 @@ const Experience = () => {
   return (
     <section id="experience" className="section">
       <div className="container">
-        <h2 className="section-title">Experience & Journey</h2>
+        <h2 className="section-title">Internship & Journey</h2>
         
         <div className="experience-content">
           <div className="experience-details animate-fadeInLeft">

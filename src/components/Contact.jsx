@@ -1,6 +1,6 @@
-
 import { useState } from 'react'
 import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageCircle } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -22,13 +22,24 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    setTimeout(() => {
-      alert('Thank you for your message! I\'ll get back to you soon.')
+
+    try {
+      const result = await emailjs.send(
+        'service_fuutcqh', // your service ID
+        'template_wht9le8', // your template ID
+        formData, // must match template params
+        'DEmutlRhTjWwX33WY' // your public key
+      )
+
+      console.log('SUCCESS!', result.text)
+      alert("✅ Thank you! Your message has been sent.")
       setFormData({ name: '', email: '', subject: '', message: '' })
-      setIsSubmitting(false)
-    }, 1000)
+    } catch (error) {
+      console.error('FAILED...', error)
+      alert("❌ Oops! Something went wrong. Please try again later.")
+    }
+
+    setIsSubmitting(false)
   }
 
   const contactInfo = [
@@ -52,32 +63,11 @@ const Contact = () => {
     }
   ]
 
-  const socialLinks = [
-    {
-      icon: <Github size={20} />,
-      name: 'GitHub',
-      url: 'https://github.com/kani2905',
-      color: '#333'
-    },
-    {
-      icon: <Linkedin size={20} />,
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/kanishka-it/',
-      color: '#0077b5'
-    },
-    {
-      icon: <Mail size={20} />,
-      name: 'Email',
-      url: 'mailto:kanishka.it27@gmail.com',
-      color: '#ea4335'
-    }
-  ]
-
   return (
     <section id="contact" className="section">
       <div className="container">
         <h2 className="section-title">Get In Touch</h2>
-        
+
         <div className="contact-intro">
           <p className="intro-text">
             I'm always open to discussing new opportunities, interesting projects, 
@@ -100,14 +90,8 @@ const Contact = () => {
 
             <div className="contact-details">
               {contactInfo.map((info, index) => (
-                <a 
-                  key={index} 
-                  href={info.link} 
-                  className="contact-item"
-                >
-                  <div className="contact-icon">
-                    {info.icon}
-                  </div>
+                <a key={index} href={info.link} className="contact-item">
+                  <div className="contact-icon">{info.icon}</div>
                   <div className="contact-text">
                     <span className="contact-title">{info.title}</span>
                     <span className="contact-value">{info.value}</span>
@@ -118,21 +102,17 @@ const Contact = () => {
 
             <div className="social-section">
               <h4 className="social-title">Follow Me</h4>
-             <div className="social-section">
-  <h4 className="social-title">Follow Me</h4>
-  <div className="social-links">
-    <a href="mailto:kanishka.it27@gmail.com" className="social-link" target="_blank">
-      <Mail size={20} />
-    </a>
-    <a href="https://www.linkedin.com/in/kanishka-it/" className="social-link" target="_blank">
-      <Linkedin size={20} />
-    </a>
-    <a href="https://github.com/kani2905" className="social-link" target="_blank">
-      <Github size={20} />
-    </a>
-  </div>
-</div>
-
+              <div className="social-links">
+                <a href="mailto:kanishka.it27@gmail.com" className="social-link" target="_blank" rel="noreferrer">
+                  <Mail size={20} />
+                </a>
+                <a href="https://www.linkedin.com/in/kanishka-it/" className="social-link" target="_blank" rel="noreferrer">
+                  <Linkedin size={20} />
+                </a>
+                <a href="https://github.com/kani2905" className="social-link" target="_blank" rel="noreferrer">
+                  <Github size={20} />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -190,8 +170,8 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="btn btn-primary submit-btn"
                 disabled={isSubmitting}
               >
@@ -212,12 +192,12 @@ const Contact = () => {
         </div>
       </div>
 
+      {/* You already have this CSS but keeping it for full context */}
       <style jsx>{`
         .contact-intro {
           text-align: center;
           margin-bottom: 3rem;
         }
-
         .intro-text {
           font-size: 1.1rem;
           color: var(--text-secondary);
@@ -225,18 +205,15 @@ const Contact = () => {
           margin: 0 auto;
           line-height: 1.6;
         }
-
         .contact-content {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 4rem;
           align-items: start;
         }
-
         .info-section {
           margin-bottom: 2rem;
         }
-
         .info-title {
           display: flex;
           align-items: center;
@@ -246,19 +223,16 @@ const Contact = () => {
           color: var(--text-primary);
           margin-bottom: 1rem;
         }
-
         .info-description {
           color: var(--text-secondary);
           line-height: 1.6;
         }
-
         .contact-details {
           display: flex;
           flex-direction: column;
           gap: 1rem;
           margin-bottom: 2rem;
         }
-
         .contact-item {
           display: flex;
           align-items: center;
@@ -270,12 +244,10 @@ const Contact = () => {
           text-decoration: none;
           transition: all 0.3s ease;
         }
-
         .contact-item:hover {
           border-color: var(--accent-primary);
           transform: translateX(5px);
         }
-
         .contact-icon {
           display: flex;
           align-items: center;
@@ -287,41 +259,34 @@ const Contact = () => {
           color: white;
           flex-shrink: 0;
         }
-
         .contact-text {
           display: flex;
           flex-direction: column;
         }
-
         .contact-title {
           font-size: 0.9rem;
           color: var(--text-muted);
           font-weight: 500;
         }
-
         .contact-value {
           font-size: 1rem;
           color: var(--text-primary);
           font-weight: 500;
         }
-
         .social-section {
           margin-top: 2rem;
         }
-
         .social-title {
           font-size: 1.2rem;
           font-weight: 600;
           color: var(--text-primary);
           margin-bottom: 1rem;
         }
-
         .social-links {
           display: flex;
           flex-direction: column;
           gap: 0.75rem;
         }
-
         .social-link {
           display: flex;
           align-items: center;
@@ -334,31 +299,26 @@ const Contact = () => {
           text-decoration: none;
           transition: all 0.3s ease;
         }
-
         .social-link:hover {
-          border-color: var(--social-color);
-          color: var(--social-color);
+          border-color: var(--accent-primary);
+          color: var(--accent-primary);
           transform: translateX(5px);
         }
-
         .contact-form {
           background: var(--bg-secondary);
           border: 1px solid var(--border-color);
           border-radius: 12px;
           padding: 2rem;
         }
-
         .form-group {
           margin-bottom: 1.5rem;
         }
-
         .form-label {
           display: block;
           font-weight: 500;
           color: var(--text-primary);
           margin-bottom: 0.5rem;
         }
-
         .form-input,
         .form-textarea {
           width: 100%;
@@ -370,30 +330,28 @@ const Contact = () => {
           font-size: 1rem;
           transition: all 0.3s ease;
         }
-
         .form-input:focus,
         .form-textarea:focus {
           outline: none;
           border-color: var(--accent-primary);
           box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
         }
-
         .form-textarea {
           resize: vertical;
           min-height: 120px;
         }
-
         .submit-btn {
           width: 100%;
           justify-content: center;
           position: relative;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
         }
-
         .submit-btn:disabled {
           opacity: 0.7;
           cursor: not-allowed;
         }
-
         .spinner {
           width: 16px;
           height: 16px;
@@ -402,28 +360,23 @@ const Contact = () => {
           border-radius: 50%;
           animation: spin 1s linear infinite;
         }
-
         @keyframes spin {
           to {
             transform: rotate(360deg);
           }
         }
-
         @media (max-width: 768px) {
           .contact-content {
             grid-template-columns: 1fr;
             gap: 2rem;
           }
-
           .contact-form {
             padding: 1.5rem;
           }
-
           .social-links {
             flex-direction: row;
             flex-wrap: wrap;
           }
-
           .social-link {
             flex: 1;
             min-width: 120px;

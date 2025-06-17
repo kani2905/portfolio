@@ -43,12 +43,7 @@ const Footer = () => {
           </div>
           
           <div className="footer-bottom">
-            <div className="copyright">
-              <p>
-                © {currentYear} Kanihska. Made with <Heart size={16} className="heart-icon" /> 
-                using React & Vite
-              </p>
-            </div>
+            
             
             <button className="scroll-top" onClick={scrollToTop}>
               <ArrowUp size={20} />
@@ -154,19 +149,9 @@ const Footer = () => {
           gap: 0.5rem;
         }
 
-        .heart-icon {
-          color: #ff6b6b;
-          animation: heartbeat 2s ease-in-out infinite;
-        }
+        
 
-        @keyframes heartbeat {
-          0%, 100% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.1);
-          }
-        }
+       
 
         .scroll-top {
           display: flex;
