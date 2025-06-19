@@ -18,7 +18,7 @@ const Projects = () => {
       icon: <Globe size={24} />,
       category: 'Web Application',
       features: ['User authentication', 'Real-time results', 'Admin panel'],
-       github: 'https://github.com/kani2905/E-Voting-system.git'
+      github: 'https://github.com/kani2905/E-Voting-system.git'
     },
     {
       title: 'Student Report Generator',
@@ -45,7 +45,16 @@ const Projects = () => {
       icon: <Bot size={24} />,
       category: 'AI Integration',
       features: ['Natural language processing', 'Real-time responses', 'Context awareness'],
-       github: 'https://github.com/kani2905/AI-Chat-Bot.git',
+      github: 'https://github.com/kani2905/AI-Chat-Bot.git',
+    },
+    {
+      title: 'Weather App',
+      description: 'Built a real-time Weather App using React.js and OpenWeatherMap API to fetch and display live weather data by city, fully responsive and deployed on Vercel.',
+      tech: ['ReactJS', 'OpenWeatherMap API', 'HTML/CSS'],
+      icon: <Bot size={24} />,
+      category: 'API Integration',
+      features: ['Weather updates', 'Real-time responses', 'Weather API'],
+      github: 'https://github.com/kani2905/Weather-app.git',
     }
   ]
 
@@ -53,7 +62,7 @@ const Projects = () => {
     <section id="projects" className="section">
       <div className="container">
         <h2 className="section-title">Featured Projects</h2>
-        
+
         <div className="projects-grid">
           {projects.map((project, index) => (
             <div key={index} className="project-card card animate-fadeInUp">
@@ -66,9 +75,9 @@ const Projects = () => {
                   <span className="project-category">{project.category}</span>
                 </div>
               </div>
-              
+
               <p className="project-description">{project.description}</p>
-              
+
               <div className="project-features">
                 {project.features.map((feature, featureIndex) => (
                   <span key={featureIndex} className="feature-tag">
@@ -76,7 +85,7 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              
+
               <div className="project-tech">
                 {project.tech.map((tech, techIndex) => (
                   <span key={techIndex} className="tech-tag">
@@ -84,7 +93,7 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              
+
               <div className="project-links">
                 <a
                   href={project.github}
@@ -95,32 +104,21 @@ const Projects = () => {
                   <Github size={16} />
                   Code
                 </a>
-                <a
-                  href={project.demo || '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  <ExternalLink size={16} />
-                  Demo
-                </a>
               </div>
-
             </div>
           ))}
         </div>
-        
-        <div className="projects-cta">
-  <p className="cta-text">Want to see more of my work?</p>
-  <button
-    className="btn btn-primary"
-    onClick={() => window.open('https://github.com/kani2905', '_blank')}
-  >
-    <Github size={16} />
-    View All Projects
-  </button>
-</div>
 
+        <div className="projects-cta">
+          <p className="cta-text">Want to see more of my work?</p>
+          <button
+            className="btn btn-primary"
+            onClick={() => window.open('https://github.com/kani2905', '_blank')}
+          >
+            <Github size={16} />
+            View All Projects
+          </button>
+        </div>
       </div>
 
       <style jsx>{`
@@ -136,6 +134,9 @@ const Projects = () => {
           position: relative;
           overflow: hidden;
           transition: all 0.3s ease;
+          background: var(--bg-secondary);
+          border-radius: 12px;
+          border: 1px solid var(--border-color);
         }
 
         .project-card::before {
@@ -231,7 +232,6 @@ const Projects = () => {
         .project-links {
           display: flex;
           gap: 1rem;
-          text-decoration: none;
         }
 
         .project-link {
