@@ -17,8 +17,8 @@ const Skills = () => {
       icon: <Palette size={24} />,
       title: 'Web Development',
       skills: [
-        { name: 'HTML/CSS', level: 95 },
-        { name: 'React', level: 85 },
+        { name: 'HTML', level: 95 },
+        { name: 'Css', level: 85 },
         { name: 'Bootstrap', level: 80 },
         { name: 'Responsive Design', level: 90 }
       ]
@@ -52,7 +52,17 @@ const Skills = () => {
         { name: 'Project Management', level: 80 },
         { name: 'Adaptability', level: 90 }
       ]
-    }
+    },
+    {
+      icon: <Palette size={24} />,
+      title: 'Mern Stack Development',
+      skills: [
+        { name: 'Node js', level: 95 },
+        { name: 'React', level: 85 },
+        { name: 'Express js', level: 80 },
+        { name: 'Mongodb', level: 90 }
+      ]
+    },
   ]
 
   const certifications = [
