@@ -6,8 +6,8 @@ const Skills = () => {
       icon: <Code size={24} />,
       title: 'Programming Languages',
       skills: [
-        { name: 'Python', level: 85 },
-        { name: 'Java', level: 80 },
+        { name: 'Python', level: 80},
+        { name: 'Java', level: 95 },
         { name: 'JavaScript', level: 90 },
         { name: 'C++', level: 75 },
         { name: 'C', level: 70 }

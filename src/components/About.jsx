@@ -25,7 +25,7 @@ const About = () => {
   ]
 
   const competitions = [
-    'Smart India Hackathon',
+    'DevSpark Hackathon',
     'Apithon',
     'LEAF Competition',
     'MIT Symposium'
