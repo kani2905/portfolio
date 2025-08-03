@@ -23,7 +23,7 @@ const Header = ({ activeSection }) => {
 
   const downloadResume = () => {
   const link = document.createElement('a')
-  link.href = '/KANISHKA_RESUME(2).pdf' // ✅ Make sure RESUME.pdf is in the public folder
+  link.href = '/RESUME.pdf' // ✅ Make sure RESUME.pdf is in the public folder
   link.download = 'Resume.pdf'
   link.target = '_blank'
   link.rel = 'noopener noreferrer'
