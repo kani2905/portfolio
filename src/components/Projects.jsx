@@ -55,7 +55,17 @@ const Projects = () => {
       category: 'API Integration',
       features: ['Weather updates', 'Real-time responses', 'Weather API'],
       github: 'https://github.com/kani2905/Weather-app.git',
-    }
+    },
+   {
+  title: 'ExamShield - Backend',
+  description: 'Developed a secure and scalable Node.js + Express backend with MongoDB for ExamShield, enabling real-time smart invigilation, student monitoring, and exam management.',
+  tech: ['Node.js', 'Express.js', 'MongoDB', 'JWT', 'WebSockets'],
+  icon: <Bot size={24} />,
+  category: 'Backend Development',
+  features: ['User authentication', 'Exam scheduling', 'Real-time monitoring', 'Role-based access control'],
+  github: 'https://github.com/kani2905/Examsheild-backend.git',
+}
+
   ]
 
   return (
