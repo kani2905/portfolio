@@ -64,6 +64,22 @@ const Projects = () => {
   category: 'Backend Development',
   features: ['User authentication', 'Exam scheduling', 'Real-time monitoring', 'Role-based access control'],
   github: 'https://github.com/kani2905/Examsheild-backend.git',
+},
+{
+  title: 'DUAL QUIZ APP - MOBILE APP',
+  description:
+    'Built a competitive two-player quiz app using Java and Android Studio, featuring timed questions, a leaderboard system, and local score persistence using file I/O. Designed for smooth gameplay and engaging learning experiences.',
+  tech: ['Java', 'Android Studio', 'XML', 'File I/O', 'SQLite'],
+  icon: <Smartphone size={24} />, // you can replace with any icon, e.g., <Bot size={24} />
+  category: 'Mobile App Development',
+  features: [
+    'Two-player quiz mode',
+    'Dynamic question management',
+    'Leaderboard and score tracking',
+    'Timer per question',
+    'Offline data storage'
+  ],
+  github: 'https://github.com/kani2905/Dual-Quizz-App.git',
 }
 
   ]
