@@ -80,7 +80,32 @@ const Projects = () => {
     'Offline data storage'
   ],
   github: 'https://github.com/kani2905/Dual-Quizz-App.git',
+},
+{
+  title: 'NEURONOTES – FULL STACK AI LEARNING ASSISTANT',
+  description:
+    'Developed a full-stack AI-powered learning assistant that converts lectures into structured notes, generates quizzes, supports multilingual translation (including Thanglish), and provides doubt clarification. Integrated with Whisper API, GPT-4 Turbo, and Cloudinary for seamless content processing and storage.',
+  tech: [
+    'React.js',
+    'Node.js',
+    'Express.js',
+    'MongoDB',
+    'Cloudinary',
+    'OpenAI API',
+    'Google Translate API'
+  ],
+  icon: <Brain size={24} />, // or <Bot size={24} /> for a techy feel
+  category: 'Full Stack Development',
+  features: [
+    'Video & YouTube lecture transcription',
+    'AI-generated summaries and flashcards',
+    'Smart note translation (Thanglish + others)',
+    'Real-time peer note sharing',
+    'PDF export & analytics dashboard'
+  ],
+  github: 'https://github.com/kani2905/NeuroNotes-FullStack.git',
 }
+
 
   ]
 
