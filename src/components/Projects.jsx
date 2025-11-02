@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Smartphone, Globe, Code, Bot } from 'lucide-react'
+import { ExternalLink, Github, Smartphone, Globe, Code, Bot,Brain  } from 'lucide-react'
 
 const Projects = () => {
   const projects = [
