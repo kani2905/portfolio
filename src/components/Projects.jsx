@@ -105,8 +105,6 @@ const Projects = () => {
   ],
   github: 'https://github.com/kani2905/NeuroNotes-FullStack.git',
 }
-
-
   ]
 
   return (
