@@ -1,8 +1,14 @@
+// ...existing code...
 import { Heart, ArrowUp } from 'lucide-react'
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    const scroller = document.scrollingElement || document.documentElement || document.body
+    if (scroller && typeof scroller.scrollTo === 'function') {
+      scroller.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
   }
 
   const currentYear = new Date().getFullYear()
@@ -18,7 +24,7 @@ const Footer = () => {
                 Building the future, one line of code at a time.
               </p>
             </div>
-            
+
             <div className="footer-links">
               <div className="link-group">
                 <h4 className="link-title">Navigation</h4>
@@ -29,7 +35,7 @@ const Footer = () => {
                   <li><a href="#projects" className="footer-link">Projects</a></li>
                 </ul>
               </div>
-              
+
               <div className="link-group">
                 <h4 className="link-title">Connect</h4>
                 <ul className="link-list">
@@ -41,11 +47,24 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="footer-bottom">
-            
-            
-            <button className="scroll-top" onClick={scrollToTop}>
+            <div className="copyright" aria-hidden={false}>
+              <p>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  <Heart size={14} style={{ color: 'var(--accent-primary)' }} />
+                  <span>Made with</span>
+                </span>
+                <span style={{ marginLeft: 8 }}>© {currentYear} Kanishka</span>
+              </p>
+            </div>
+
+            <button
+              type="button"
+              aria-label="Scroll to top"
+              className="scroll-top"
+              onClick={scrollToTop}
+            >
               <ArrowUp size={20} />
             </button>
           </div>
@@ -147,11 +166,8 @@ const Footer = () => {
           display: flex;
           align-items: center;
           gap: 0.5rem;
+          margin: 0;
         }
-
-        
-
-       
 
         .scroll-top {
           display: flex;
@@ -165,6 +181,12 @@ const Footer = () => {
           color: white;
           cursor: pointer;
           transition: all 0.3s ease;
+          z-index: 50;
+          outline: none;
+        }
+
+        .scroll-top:focus {
+          box-shadow: 0 0 0 3px rgba(100, 150, 255, 0.15);
         }
 
         .scroll-top:hover {
@@ -199,3 +221,4 @@ const Footer = () => {
 }
 
 export default Footer
+// ...existing code...
